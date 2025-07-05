@@ -1,4 +1,4 @@
-# HereFishyFishy 🐟
+# HereFishyFishy 
 
 A Python-based domain trust scoring proof-of-concept (POC) designed to assess the trustworthiness of domains through multiple security indicators. This tool combines domain age analysis, SSL certificate validation, typosquatting detection, and whitelist support to provide a comprehensive trust score.
 
@@ -13,7 +13,7 @@ A Python-based domain trust scoring proof-of-concept (POC) designed to assess th
 
 ## Security Considerations
 
-⚠️ **DISCLAIMER**: This tool performs WHOIS lookups, DNS variant generation, and SSL/TLS handshakes that may expose your IP address unless routed through a proxy. For full anonymity, run in an isolated VM or container with Tor and ensure DNS leak protection.
+**DISCLAIMER**: This tool performs WHOIS lookups, DNS variant generation, and SSL/TLS handshakes that may expose your IP address unless routed through a proxy. For full anonymity, run in an isolated VM or container with Tor and ensure DNS leak protection.
 
 ## Installation
 
