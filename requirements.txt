@@ -1,0 +1,9 @@
+python-whois
+tldextract
+idna
+dnstwist
+pysocks
+requests
+# Optional for image hashing:
+# Pillow
+# imagehash
