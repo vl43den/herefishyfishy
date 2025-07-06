@@ -8,7 +8,11 @@ A Python-based domain trust scoring proof-of-concept (POC) designed to assess th
 - **SSL Certificate Validation**: Checks SSL/TLS certificate details and validity
 - **Typosquatting Detection**: Uses dnstwist to identify potential phishing variants
 - **Whitelist Support**: Fuzzy matching against known benign domains
-- **Proxy Support**: SOCKS5 proxy integration for anonymized analysis
+- **Proxy Support**: SOCKS5 or HTTP(S) proxy integration for anonymized analysis
+- **Threat Feed Check**: Compare domains against open-source threat feeds
+- **Asynchronous Engine**: Faster lookups using asyncio
+- **Machine-Learning Scoring**: Simple logistic model blended with heuristics
+- **Web Interface**: FastAPI-powered modern web UI
 - **Trust Scoring**: Combines multiple signals into a numerical trust score (0-100)
 
 ## Security Considerations
@@ -44,7 +48,7 @@ pip install -r requirements.txt
 python prototype.py <domain>
 ```
 
-### With Proxy (Tor)
+### With Proxy (Tor or HTTP)
 ```bash
 python prototype.py <domain> --proxy socks5h://127.0.0.1:9050
 ```
@@ -59,11 +63,18 @@ python prototype.py <domain> --whitelist whitelist.txt
 python prototype.py <domain> --proxy socks5h://127.0.0.1:9050 --whitelist whitelist.txt --threshold 0.85
 ```
 
+### Web Interface
+```bash
+uvicorn webapp:app --reload
+```
+Then browse to `http://localhost:8000` and use the form to analyze a domain.
+
 ## Command Line Options
 
 - `domain`: Domain to assess (required)
-- `--proxy`: SOCKS5 proxy URL (e.g., `socks5h://127.0.0.1:9050` for Tor)
+- `--proxy`: SOCKS5 or HTTP(S) proxy URL
 - `--whitelist`: Path to newline-delimited whitelist file
+- `--threat-feed`: URL or file path for malicious domain feed
 - `--threshold`: Fuzzy match threshold for whitelist (0-1, default: 0.9)
 
 ## Examples
@@ -119,6 +130,8 @@ microsoft.com
 - `dnstwist`: Typosquatting detection
 - `pysocks`: SOCKS proxy support
 - `requests`: HTTP requests
+- `aiohttp`: Async HTTP client
+- `fastapi` and `uvicorn`: Web interface server
 
 ## Privacy & Anonymity
 

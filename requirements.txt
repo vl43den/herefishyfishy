@@ -4,6 +4,10 @@ idna
 dnstwist
 pysocks
 requests
+# New asynchronous and web requirements
+aiohttp
+fastapi
+uvicorn
 # Optional for image hashing:
 # Pillow
 # imagehash
